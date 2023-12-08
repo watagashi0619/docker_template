@@ -1,0 +1,10 @@
+version: "3"
+services:
+  app:
+    build:
+      context: ../ # docker-compose.ymlから見たDockerfileの位置
+      dockerfile: Dockerfile # ビルドするDockerfileの名前
+    volumes:
+      - ../app:/workspace # docker外のappフォルダをdocker内のworkspaceフォルダにマウント
+    tty: true             # ターミナル入力を受け付ける
+    #command: sleep infinity # CMD ["/bin/bash"]がdockerfileにあれば不要
