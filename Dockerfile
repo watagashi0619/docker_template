@@ -2,6 +2,7 @@ FROM python:3.11
 
 # 作業ディレクトリの設定
 WORKDIR /workspace
+ARG PROJECT_NAME="sample_project"
 
 RUN apt-get update
 # タイムゾーンの設定
@@ -23,7 +24,7 @@ RUN pip3 install --upgrade pip
 # poetryインストール
 RUN pip install poetry \
     && poetry config virtualenvs.create false
-COPY ./app/sample_project/pyproject.toml ./app/sample_project/poetry.lock* ./
+COPY ./app/${PROJECT_NAME}/pyproject.toml ./app/${PROJECT_NAME}/poetry.lock* ./
 RUN poetry install
 
 CMD ["/bin/bash"]

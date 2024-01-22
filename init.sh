@@ -12,3 +12,4 @@ docker run \
   python:3.11-slim bash -c \
   'pip install poetry && poetry new '"$PROJECT_NAME"' && cd $_ && poetry install'
 docker rm creator
+sed -i '' "s/sample_project/$PROJECT_NAME/g" Dockerfile
