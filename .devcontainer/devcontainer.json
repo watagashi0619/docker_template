@@ -1,5 +1,5 @@
 {
-    "name": "test", // コンテナ名
+    "name": "sample_project", // コンテナ名
     "dockerComposeFile": [
         "docker-compose.yml"
     ],

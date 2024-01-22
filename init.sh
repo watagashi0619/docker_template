@@ -13,3 +13,5 @@ docker run \
   'pip install poetry && poetry new '"$PROJECT_NAME"' && cd $_ && poetry install'
 docker rm creator
 sed -i '' "s/sample_project/$PROJECT_NAME/g" Dockerfile
+sed -i '' "s/sample_project/$PROJECT_NAME/g" .devcontainer/devcontainer.json
+
